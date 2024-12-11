@@ -33,7 +33,7 @@ jobs:
       # Вызываем flake8 и указываем ему,
       # что нужно проверить файлы только в папке backend/
       run: | 
-      cd taski-docker-main/ 
+      cd taski-docker-main
       python -m flake8 backend/
       cd backend/
       python manage.py test
