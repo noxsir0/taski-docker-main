@@ -171,8 +171,6 @@ jobs:
     steps:
     - name: Checkout repo
       uses: actions/checkout@v3
-    - name: List files in workspace
-      run: ls -la
     # Копируем docker-compose.production.yml на продакшен-сервер
     - name: Copy docker-compose.yml via ssh
       uses: appleboy/scp-action@master
@@ -182,9 +180,8 @@ jobs:
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.SSH_PASSPHRASE }}
-        source: "docker-compose.production.yml"
+        source: "taski-docker-main/docker-compose.production.yml"
         target: "taski"
-        debug: true
     - name: Executing remote ssh commands to deploy
       uses: appleboy/ssh-action@master
       with:
