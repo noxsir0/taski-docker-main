@@ -55,10 +55,6 @@ jobs:
         # Поэтому подключаемся к 127.0.0.1:5432
         DB_HOST: 127.0.0.1
         DB_PORT: 543    
-    # Запускаем flake8
-    - name: Test with flake8 and django tests
-      # Вызываем flake8 и указываем ему,
-      # что нужно проверить файлы только в папке backend/
       run: | 
         cd taski-docker-main
         python -m flake8 backend/
