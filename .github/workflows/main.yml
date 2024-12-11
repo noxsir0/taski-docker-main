@@ -31,4 +31,4 @@ jobs:
     - name: Test with flake8
       # Вызываем flake8 и указываем ему,
       # что нужно проверить файлы только в папке backend/
-      run: cd taski-docker-main/taski-docker-main && python -m flake8 backend/
+      run: cd taski-docker-main && python -m flake8 backend/
